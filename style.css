@@ -6,8 +6,8 @@
 
 body {
   font-family: "Century Gothic", "CenturyGothic", "AppleGothic", Arial, sans-serif;
-  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
-  color: #333;
+  background: #000000;
+  color: #ffffff;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -39,7 +39,7 @@ nav .nav-container {
   align-items: center;
   width: 100%;
   padding: 2rem 0;
-  background: #ffffff;
+  background: #000000;
 }
 
 .logo-section img {
@@ -105,8 +105,8 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  background: #ffffff;
-  color: #000000;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
@@ -185,7 +185,7 @@ section {
 section h2 {
   font-size: 2.8rem;
   margin-bottom: 3rem;
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   position: relative;
   padding-bottom: 1rem;
@@ -199,7 +199,7 @@ section h2::after {
   transform: translateX(-50%);
   width: 100px;
   height: 4px;
-  background: linear-gradient(90deg, #000000 0%, #666666 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #cccccc 100%);
   border-radius: 2px;
 }
 
@@ -216,12 +216,12 @@ section h2.no-underline::after {
 }
 
 .service-card {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 2.5rem;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -233,7 +233,7 @@ section h2.no-underline::after {
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #000000 0%, #666666 100%);
+  background: linear-gradient(90deg, #ffffff 0%, #cccccc 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -244,12 +244,12 @@ section h2.no-underline::after {
 
 .service-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  border-color: #000000;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
 }
 
 .service-card h3 {
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 1.2rem;
   font-size: 1.6rem;
   font-weight: 700;
@@ -260,8 +260,8 @@ section h2.no-underline::after {
 
 .service-card h3::before {
   content: '✓';
-  background: #000000;
-  color: white;
+  background: #ffffff;
+  color: #000000;
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -274,7 +274,7 @@ section h2.no-underline::after {
 }
 
 .service-card p {
-  color: #555;
+  color: #ffffff;
   line-height: 1.9;
   font-size: 1.05rem;
 }
@@ -283,8 +283,8 @@ section h2.no-underline::after {
 .btn {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: #000000;
-  color: white;
+  background: #ffffff;
+  color: #000000;
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
@@ -292,7 +292,7 @@ section h2.no-underline::after {
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -305,7 +305,7 @@ section h2.no-underline::after {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
@@ -317,30 +317,32 @@ section h2.no-underline::after {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-  background: #1a1a1a;
-  color: white;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+  background: #e0e0e0;
+  color: #000000;
 }
 
 .btn-secondary {
-  background: #1a1a1a;
+  background: #333333;
+  color: #ffffff;
 }
 
 .btn-secondary:hover {
-  background: #000000;
+  background: #555555;
+  color: #ffffff;
 }
 
 .btn-accent {
-  background: #ffffff;
-  color: #000000;
-  border: 2px solid #000000;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
 .btn-accent:hover {
-  background: #000000;
-  color: #ffffff;
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Adparavimus Section */
@@ -350,25 +352,25 @@ section h2.no-underline::after {
 }
 
 .adparavimus-content {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 4rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* About Page Styles */
 .about-content {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 4rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
   margin-top: 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-content h3 {
-  color: #000000;
+  color: #ffffff;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
   font-size: 2rem;
@@ -386,21 +388,21 @@ section h2.no-underline::after {
   content: '';
   width: 6px;
   height: 40px;
-  background: linear-gradient(135deg, #000000 0%, #666666 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
   border-radius: 3px;
 }
 
 .about-content p {
   margin-bottom: 1.8rem;
   line-height: 1.9;
-  color: #555;
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
 .about-content ul {
   margin-left: 2.5rem;
   margin-bottom: 1.8rem;
-  color: #555;
+  color: #ffffff;
   line-height: 2.2;
   font-size: 1.05rem;
 }
@@ -412,12 +414,12 @@ section h2.no-underline::after {
 }
 
 .about-content ul li::marker {
-  color: #000000;
+  color: #ffffff;
   font-weight: bold;
 }
 
 .about-content h4 {
-  color: #000000;
+  color: #ffffff;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: 1.4rem;
@@ -425,7 +427,7 @@ section h2.no-underline::after {
 }
 
 .about-content strong {
-  color: #000000;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -438,15 +440,15 @@ section h2.no-underline::after {
 }
 
 .contact-info {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-info h3 {
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
@@ -462,26 +464,26 @@ section h2.no-underline::after {
 
 .contact-info p {
   margin-bottom: 1.5rem;
-  color: #555;
+  color: #ffffff;
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
 .contact-info strong {
-  color: #000000;
+  color: #ffffff;
   font-weight: 700;
 }
 
 .contact-form {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-form h3 {
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;
@@ -502,7 +504,7 @@ section h2.no-underline::after {
 .form-group label {
   display: block;
   margin-bottom: 0.75rem;
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1.05rem;
 }
@@ -512,20 +514,26 @@ section h2.no-underline::after {
 .form-group select {
   width: 100%;
   padding: 1rem;
-  border: 2px solid #e2e8f0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   font-size: 1rem;
   font-family: inherit;
   transition: all 0.3s ease;
-  background: white;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #000000;
-  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
 
@@ -545,7 +553,7 @@ section h2.no-underline::after {
 
 .form-group input:valid:not(:placeholder-shown),
 .form-group textarea:valid:not(:placeholder-shown) {
-  border-color: #10b981;
+  border-color: #4ade80;
 }
 
 .form-errors {
@@ -580,27 +588,27 @@ footer a:hover {
 
 /* Stats/Feature Boxes */
 .feature-box {
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .feature-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
 }
 
 .feature-box h4 {
-  color: #000000;
+  color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .feature-box p {
-  color: #666;
+  color: #ffffff;
 }
 
 /* Cookie Consent Banner */
@@ -674,7 +682,7 @@ footer a:hover {
 .cookie-btn-accept:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.4);
-  background: #f5f5f5;
+  background: #e0e0e0;
 }
 
 .cookie-btn-customize {
@@ -705,14 +713,14 @@ footer a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -4px 30px rgba(255, 255, 255, 0.2);
   z-index: 10001;
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-top: 4px solid #000000;
+  border-top: 4px solid #ffffff;
 }
 
 .cookie-customize-panel.show {
@@ -731,11 +739,11 @@ footer a:hover {
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .cookie-panel-header h3 {
-  color: #000000;
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
   margin: 0;
@@ -745,7 +753,7 @@ footer a:hover {
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -757,30 +765,30 @@ footer a:hover {
 }
 
 .cookie-panel-close:hover {
-  background: #f5f5f5;
+  background: rgba(255, 255, 255, 0.2);
   transform: rotate(90deg);
 }
 
 .cookie-panel-description {
-  color: #555;
+  color: #ffffff;
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
 
 .cookie-category {
-  background: white;
+  background: #0a0a0a;
   padding: 2rem;
   border-radius: 15px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .cookie-category:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border-color: #000000;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
 }
 
 .cookie-category-header {
@@ -791,14 +799,14 @@ footer a:hover {
 }
 
 .cookie-category-header h4 {
-  color: #000000;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
 }
 
 .cookie-category p {
-  color: #666;
+  color: #ffffff;
   line-height: 1.8;
   margin-bottom: 1rem;
   font-size: 1.05rem;
@@ -824,7 +832,7 @@ footer a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #cbd5e1;
+  background-color: #555555;
   transition: 0.4s;
   border-radius: 32px;
 }
@@ -836,14 +844,14 @@ footer a:hover {
   width: 24px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: #ffffff;
   transition: 0.4s;
   border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
 .cookie-toggle input:checked + .cookie-slider {
-  background: #000000;
+  background: #ffffff;
 }
 
 .cookie-toggle input:checked + .cookie-slider:before {
@@ -851,15 +859,15 @@ footer a:hover {
 }
 
 .cookie-toggle input:disabled + .cookie-slider {
-  background-color: #94a3b8;
+  background-color: #333333;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
 .cookie-required-badge {
   display: inline-block;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #000000;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -873,7 +881,7 @@ footer a:hover {
   justify-content: flex-end;
   margin-top: 2.5rem;
   padding-top: 2rem;
-  border-top: 2px solid #e2e8f0;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
   flex-wrap: wrap;
 }
 

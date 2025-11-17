@@ -118,7 +118,7 @@
                   maxlength="5000"
                   title="Message must be between 10 and 5000 characters"
                   placeholder="Please describe your project, timeline, and any specific requirements..."></textarea>
-                <small style="display: block; margin-top: 0.5rem; color: #666; font-size: 0.9rem;">
+                <small style="display: block; margin-top: 0.5rem; color: #ffffff; font-size: 0.9rem;">
                   <span id="messageCharCount">0</span> / 5000 characters
                 </small>
               </div>
@@ -133,7 +133,7 @@
         <h2>What Happens Next?</h2>
         <div class="about-content">
           <p>After you submit your contact form or call us, we'll respond within 24 hours (or sooner for urgent matters). During our initial conversation, we'll:</p>
-          <ul style="margin-left: 2rem; margin-top: 1rem; color: #555; line-height: 2;">
+          <ul style="margin-left: 2rem; margin-top: 1rem; color: #ffffff; line-height: 2;">
             <li>Discuss your project vision, needs, and requirements</li>
             <li>Provide a detailed estimate for your project</li>
             <li>Answer any questions you may have about the process</li>
@@ -368,7 +368,7 @@
           // Use safe DOM manipulation to prevent XSS
           const errorMsg = escapeHtml(message);
           const errorBox = document.createElement('div');
-          errorBox.style.cssText = 'background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;';
+          errorBox.style.cssText = 'background: #4a1a1a; color: #ff6b6b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;';
           errorBox.textContent = errorMsg;
           errorDiv.innerHTML = '';
           errorDiv.appendChild(errorBox);
@@ -383,7 +383,7 @@
           // Use safe DOM manipulation to prevent XSS
           const successMsg = escapeHtml(message);
           const successBox = document.createElement('div');
-          successBox.style.cssText = 'background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;';
+          successBox.style.cssText = 'background: #1a4a3a; color: #4ade80; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;';
           successBox.textContent = successMsg;
           errorDiv.innerHTML = '';
           errorDiv.appendChild(successBox);
