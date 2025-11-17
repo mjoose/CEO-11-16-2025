@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <script src="security.js"></script>
+    <title>Contact Us - General Contractor Services</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Contact Us</h1>
+      <p>Get in Touch - We're Here to Help</p>
+    </div>
+
+    <div class="container">
+      <section>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Company:</strong> General Contractor Services</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Email:</strong> info@generalcontractor.com</p>
+            <p><strong>Business Hours:</strong></p>
+            <p>Monday - Friday: 7:00 AM - 6:00 PM<br>
+            Saturday: 8:00 AM - 4:00 PM<br>
+            Sunday: Closed</p>
+            
+            <h3 style="margin-top: 2rem;">Emergency Service</h3>
+            <p>For urgent construction emergencies, please call our emergency line at <strong>(555) 123-4567</strong> and select option 1.</p>
+
+            <h3 style="margin-top: 2rem;">Service Areas</h3>
+            <p>We proudly serve homeowners and businesses throughout the region. Contact us to see if we service your area and to schedule a free consultation.</p>
+          </div>
+
+          <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form id="contactForm" action="#" method="POST" novalidate>
+              <!-- Honeypot field for bot detection (hidden from users) -->
+              <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                <label for="website">Website (leave blank)</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div id="formErrors" class="form-errors" style="display: none;"></div>
+
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  minlength="2" 
+                  maxlength="100"
+                  pattern="[a-zA-Z\s\-'\.]{2,100}"
+                  title="Name must be 2-100 characters and contain only letters, spaces, hyphens, apostrophes, and periods"
+                  autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  maxlength="254"
+                  pattern="[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*"
+                  title="Please enter a valid email address"
+                  autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  maxlength="20"
+                  pattern="[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}"
+                  title="Please enter a valid phone number (e.g., (555) 123-4567)"
+                  autocomplete="tel">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Project Type</label>
+                <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 5px; font-size: 1rem; font-family: inherit;">
+                  <option value="">Select a project type...</option>
+                  <option value="residential-construction">Residential Construction</option>
+                  <option value="home-remodeling">Home Remodeling</option>
+                  <option value="commercial-construction">Commercial Construction</option>
+                  <option value="additions-extensions">Additions & Extensions</option>
+                  <option value="roofing-siding">Roofing & Siding</option>
+                  <option value="deck-patio">Deck & Patio Construction</option>
+                  <option value="kitchen-renovation">Kitchen Renovation</option>
+                  <option value="bathroom-renovation">Bathroom Renovation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  required 
+                  minlength="10" 
+                  maxlength="5000"
+                  title="Message must be between 10 and 5000 characters"
+                  placeholder="Please describe your project, timeline, and any specific requirements..."></textarea>
+                <small style="display: block; margin-top: 0.5rem; color: #666; font-size: 0.9rem;">
+                  <span id="messageCharCount">0</span> / 5000 characters
+                </small>
+              </div>
+
+              <button type="submit" class="btn" id="submitBtn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>What Happens Next?</h2>
+        <div class="about-content">
+          <p>After you submit your contact form or call us, we'll respond within 24 hours (or sooner for urgent matters). During our initial conversation, we'll:</p>
+          <ul style="margin-left: 2rem; margin-top: 1rem; color: #555; line-height: 2;">
+            <li>Discuss your project vision, needs, and requirements</li>
+            <li>Schedule a free on-site consultation if needed</li>
+            <li>Provide a detailed estimate for your project</li>
+            <li>Answer any questions you may have about the process</li>
+            <li>Discuss timeline and next steps</li>
+          </ul>
+          <p style="margin-top: 1.5rem;">We look forward to working with you and bringing your construction or remodeling vision to life!</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 General Contractor Services. All rights reserved. | <a href="privacy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-banner-content">
+        <div class="cookie-banner-text">
+          <h4>🍪 Cookie Preferences</h4>
+          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.</p>
+        </div>
+        <div class="cookie-banner-buttons">
+          <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+          <button class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize Cookies</button>
+          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Overlay -->
+    <div id="cookieOverlay" class="cookie-overlay" onclick="closeCookieCustomize()"></div>
+
+    <!-- Cookie Customization Panel -->
+    <div id="cookieCustomizePanel" class="cookie-customize-panel">
+      <div class="cookie-panel-content">
+        <div class="cookie-panel-header">
+          <h3>Cookie Preferences</h3>
+          <button class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
+        </div>
+        <p class="cookie-panel-description">
+          Manage your cookie preferences. You can enable or disable different types of cookies below. 
+          Required cookies are essential for the website to function properly and cannot be disabled.
+        </p>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Required Cookies <span class="cookie-required-badge">Always Active</span></h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="cookieRequired">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Analytics Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieAnalytics">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Marketing Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieMarketing">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies are used to deliver advertisements and track campaign performance. They may be set by our advertising partners.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Functional Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieFunctional">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.</p>
+        </div>
+
+        <div class="cookie-panel-actions">
+          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" style="background: #ef4444; color: white;">Reject All</button>
+          <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Form Security and Validation
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('contactForm');
+        const messageField = document.getElementById('message');
+        const charCount = document.getElementById('messageCharCount');
+        
+        // Character counter for message field
+        if (messageField && charCount) {
+          messageField.addEventListener('input', function() {
+            const length = sanitizeInput(this.value).length;
+            charCount.textContent = length;
+            if (length > 5000) {
+              charCount.style.color = '#ef4444';
+            } else {
+              charCount.style.color = '#666';
+            }
+          });
+        }
+
+        // Form submission handler with security validation
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check rate limiting
+            const rateLimit = checkRateLimit('contact_form', 5, 15);
+            if (!rateLimit.allowed) {
+              showFormError(rateLimit.message);
+              return false;
+            }
+            
+            // Honeypot check
+            const honeypot = document.getElementById('website');
+            if (!checkHoneypot(honeypot.value)) {
+              // Silently fail - likely a bot
+              showFormSuccess('Thank you for your message. We will get back to you soon.');
+              form.reset();
+              return false;
+            }
+            
+            // Collect form data
+            const formData = {
+              name: document.getElementById('name').value,
+              email: document.getElementById('email').value,
+              phone: document.getElementById('phone').value,
+              service: document.getElementById('service').value,
+              message: document.getElementById('message').value
+            };
+            
+            // Validate and sanitize
+            const validation = validateFormData(formData);
+            
+            if (!validation.valid) {
+              showFormError(validation.errors.join('<br>'));
+              return false;
+            }
+            
+            // Disable submit button to prevent double submission
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // In a real application, send sanitized data to server
+            // For now, simulate success
+            setTimeout(function() {
+              showFormSuccess('Thank you for your message! We have received your inquiry and will respond within 24 hours.');
+              form.reset();
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Send Message';
+              
+              // Log sanitized data (in production, send to server)
+              console.log('Sanitized form data:', validation.sanitized);
+            }, 1000);
+            
+            return false;
+          });
+          
+          // Real-time validation feedback
+          const inputs = form.querySelectorAll('input, textarea, select');
+          inputs.forEach(function(input) {
+            input.addEventListener('blur', function() {
+              validateField(this);
+            });
+          });
+        }
+      });
+      
+      function validateField(field) {
+        let isValid = true;
+        let errorMsg = '';
+        
+        switch(field.type) {
+          case 'text':
+            if (field.id === 'name') {
+              isValid = validateName(field.value);
+              errorMsg = 'Please enter a valid name (2-100 characters, letters and spaces only)';
+            }
+            break;
+          case 'email':
+            isValid = validateEmail(field.value);
+            errorMsg = 'Please enter a valid email address';
+            break;
+          case 'tel':
+            if (field.value.trim() !== '') {
+              isValid = validatePhone(field.value);
+              errorMsg = 'Please enter a valid phone number';
+            }
+            break;
+        }
+        
+        if (field.id === 'message') {
+          isValid = validateMessage(field.value);
+          errorMsg = 'Message must be between 10 and 5000 characters';
+        }
+        
+        if (field.required && !isValid && field.value.trim() !== '') {
+          field.setCustomValidity(errorMsg);
+          field.style.borderColor = '#ef4444';
+        } else {
+          field.setCustomValidity('');
+          field.style.borderColor = field.value.trim() === '' ? '#e2e8f0' : '#000000';
+        }
+      }
+      
+      function showFormError(message) {
+        const errorDiv = document.getElementById('formErrors');
+        if (errorDiv) {
+          errorDiv.innerHTML = '<div style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;">' + escapeHtml(message) + '</div>';
+          errorDiv.style.display = 'block';
+          errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+      
+      function showFormSuccess(message) {
+        const errorDiv = document.getElementById('formErrors');
+        if (errorDiv) {
+          errorDiv.innerHTML = '<div style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;">' + escapeHtml(message) + '</div>';
+          errorDiv.style.display = 'block';
+          errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+
+      // Cookie Management Script
+      const COOKIE_CONSENT_KEY = 'cookieConsent';
+      
+      // Check if user has already made a choice
+      window.addEventListener('DOMContentLoaded', function() {
+        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        if (!consent) {
+          setTimeout(() => {
+            document.getElementById('cookieBanner').classList.add('show');
+          }, 500);
+        }
+      });
+
+      function acceptAllCookies() {
+        const preferences = {
+          required: true,
+          analytics: true,
+          marketing: true,
+          functional: true,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        closeCookieBanner();
+      }
+
+      function rejectAllCookies() {
+        const preferences = {
+          required: true,
+          analytics: false,
+          marketing: false,
+          functional: false,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        closeCookieBanner();
+        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) {
+          closeCookieCustomize();
+        }
+      }
+
+      function openCookieCustomize() {
+        const panel = document.getElementById('cookieCustomizePanel');
+        const overlay = document.getElementById('cookieOverlay');
+        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        
+        if (consent) {
+          const prefs = JSON.parse(consent);
+          document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
+          document.getElementById('cookieMarketing').checked = prefs.marketing || false;
+          document.getElementById('cookieFunctional').checked = prefs.functional || false;
+        }
+        
+        panel.classList.add('show');
+        overlay.classList.add('show');
+      }
+
+      function closeCookieCustomize() {
+        document.getElementById('cookieCustomizePanel').classList.remove('show');
+        document.getElementById('cookieOverlay').classList.remove('show');
+      }
+
+      function saveCookiePreferences() {
+        const preferences = {
+          required: true,
+          analytics: document.getElementById('cookieAnalytics').checked,
+          marketing: document.getElementById('cookieMarketing').checked,
+          functional: document.getElementById('cookieFunctional').checked,
+          timestamp: new Date().toISOString()
+        };
+        // Validate and sanitize cookie preferences
+        const sanitized = validateCookiePreferences(preferences);
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(sanitized));
+        closeCookieBanner();
+        closeCookieCustomize();
+      }
+
+      function closeCookieBanner() {
+        document.getElementById('cookieBanner').classList.remove('show');
+      }
+    </script>
+  </body>
+</html>
+

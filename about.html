@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>About Us - General Contractor Services</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>About General Contractor Services</h1>
+      <p>Your Trusted Construction Partner</p>
+    </div>
+
+    <div class="container">
+      <div class="about-content">
+        <h3>Who We Are</h3>
+        <p>General Contractor Services is a professional construction company dedicated to providing comprehensive building and remodeling solutions for homeowners and businesses. With years of experience in the industry, we specialize in residential construction, commercial projects, home remodeling, and custom builds.</p>
+
+        <h3>Our Mission</h3>
+        <p>Our mission is to deliver reliable, high-quality construction services that exceed our clients' expectations. We believe in building long-term relationships based on trust, exceptional craftsmanship, and outstanding customer service. Every project we undertake is completed with attention to detail and a commitment to excellence.</p>
+
+        <h3>What We Do</h3>
+        <p>We offer a comprehensive range of construction services designed to meet all your building needs:</p>
+        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #555; line-height: 2;">
+          <li>Complete residential construction from foundation to finish</li>
+          <li>Home remodeling and renovation services</li>
+          <li>Commercial construction and build-outs</li>
+          <li>Home additions and extensions</li>
+          <li>Roofing and siding installation and repair</li>
+          <li>Custom deck and patio construction</li>
+          <li>Kitchen and bathroom renovations</li>
+          <li>Interior and exterior remodeling</li>
+        </ul>
+
+        <h3>Our Values</h3>
+        <p><strong>Quality Craftsmanship:</strong> We take pride in every project we complete, using premium materials and proven construction techniques to ensure lasting results.</p>
+        <p><strong>Integrity:</strong> We conduct our business with honesty and transparency, providing fair pricing and clear communication throughout every project.</p>
+        <p><strong>Reliability:</strong> We understand that construction projects are significant investments. That's why we prioritize reliability, meeting deadlines, and staying within budget.</p>
+        <p><strong>Customer Focus:</strong> Your satisfaction is our top priority. We take the time to understand your vision and work closely with you to bring it to life.</p>
+        <p><strong>Expertise:</strong> Our team stays current with the latest building codes, construction methods, and industry best practices to provide you with the best solutions.</p>
+
+        <h3>Why Choose Us?</h3>
+        <p>Choosing General Contractor Services means choosing a partner who is committed to your project's success. We don't just build structures—we create spaces that enhance your life and business. Our combination of technical expertise, quality materials, attention to detail, and competitive pricing makes us the ideal choice for all your construction and remodeling needs.</p>
+        <p>We are fully licensed, insured, and bonded, giving you peace of mind throughout your project. Our team handles all aspects of construction management, from initial planning and permits to final inspections and cleanup.</p>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="contact.html" class="btn">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 General Contractor Services. All rights reserved. | <a href="privacy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+      <div class="cookie-banner-content">
+        <div class="cookie-banner-text">
+          <h4>🍪 Cookie Preferences</h4>
+          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.</p>
+        </div>
+        <div class="cookie-banner-buttons">
+          <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+          <button class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize Cookies</button>
+          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Overlay -->
+    <div id="cookieOverlay" class="cookie-overlay" onclick="closeCookieCustomize()"></div>
+
+    <!-- Cookie Customization Panel -->
+    <div id="cookieCustomizePanel" class="cookie-customize-panel">
+      <div class="cookie-panel-content">
+        <div class="cookie-panel-header">
+          <h3>Cookie Preferences</h3>
+          <button class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
+        </div>
+        <p class="cookie-panel-description">
+          Manage your cookie preferences. You can enable or disable different types of cookies below. 
+          Required cookies are essential for the website to function properly and cannot be disabled.
+        </p>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Required Cookies <span class="cookie-required-badge">Always Active</span></h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" checked disabled id="cookieRequired">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Analytics Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieAnalytics">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Marketing Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieMarketing">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies are used to deliver advertisements and track campaign performance. They may be set by our advertising partners.</p>
+        </div>
+
+        <div class="cookie-category">
+          <div class="cookie-category-header">
+            <div>
+              <h4>Functional Cookies</h4>
+            </div>
+            <label class="cookie-toggle">
+              <input type="checkbox" id="cookieFunctional">
+              <span class="cookie-slider"></span>
+            </label>
+          </div>
+          <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.</p>
+        </div>
+
+        <div class="cookie-panel-actions">
+          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" style="background: #ef4444; color: white;">Reject All</button>
+          <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Management Script
+      const COOKIE_CONSENT_KEY = 'cookieConsent';
+      
+      // Check if user has already made a choice
+      window.addEventListener('DOMContentLoaded', function() {
+        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        if (!consent) {
+          setTimeout(() => {
+            document.getElementById('cookieBanner').classList.add('show');
+          }, 500);
+        }
+      });
+
+      function acceptAllCookies() {
+        const preferences = {
+          required: true,
+          analytics: true,
+          marketing: true,
+          functional: true,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        closeCookieBanner();
+      }
+
+      function rejectAllCookies() {
+        const preferences = {
+          required: true,
+          analytics: false,
+          marketing: false,
+          functional: false,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        closeCookieBanner();
+        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) {
+          closeCookieCustomize();
+        }
+      }
+
+      function openCookieCustomize() {
+        const panel = document.getElementById('cookieCustomizePanel');
+        const overlay = document.getElementById('cookieOverlay');
+        const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
+        
+        if (consent) {
+          const prefs = JSON.parse(consent);
+          document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
+          document.getElementById('cookieMarketing').checked = prefs.marketing || false;
+          document.getElementById('cookieFunctional').checked = prefs.functional || false;
+        }
+        
+        panel.classList.add('show');
+        overlay.classList.add('show');
+      }
+
+      function closeCookieCustomize() {
+        document.getElementById('cookieCustomizePanel').classList.remove('show');
+        document.getElementById('cookieOverlay').classList.remove('show');
+      }
+
+      function saveCookiePreferences() {
+        const preferences = {
+          required: true,
+          analytics: document.getElementById('cookieAnalytics').checked,
+          marketing: document.getElementById('cookieMarketing').checked,
+          functional: document.getElementById('cookieFunctional').checked,
+          timestamp: new Date().toISOString()
+        };
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        closeCookieBanner();
+        closeCookieCustomize();
+      }
+
+      function closeCookieBanner() {
+        document.getElementById('cookieBanner').classList.remove('show');
+      }
+    </script>
+  </body>
+</html>
+
