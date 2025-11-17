@@ -8,24 +8,25 @@
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta name="X-Content-Type-Options" content="nosniff" />
+    <meta name="X-Frame-Options" content="DENY" />
+    <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
+    <script src="security.js"></script>
     <title>About Us - General Contractor Services</title>
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+      <div class="nav-container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="hero">
@@ -35,35 +36,17 @@
 
     <div class="container">
       <div class="about-content">
-        <h3>Who We Are</h3>
-        <p>General Contractor Services is a professional construction company dedicated to providing comprehensive building and remodeling solutions for homeowners and businesses. With years of experience in the industry, we specialize in residential construction, commercial projects, home remodeling, and custom builds.</p>
+        <p style="margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.9; color: #333;">
+          At the heart of what we do is a genuine passion for the art of construction. We blend that passion with a precise and systematic approach to every project we take on.
+        </p>
 
-        <h3>Our Mission</h3>
-        <p>Our mission is to deliver reliable, high-quality construction services that exceed our clients' expectations. We believe in building long-term relationships based on trust, exceptional craftsmanship, and outstanding customer service. Every project we undertake is completed with attention to detail and a commitment to excellence.</p>
+        <p style="margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.9; color: #333;">
+          We're not just here to build functional, stunning spaces—we're here to create places that truly inspire and uplift the communities around them.
+        </p>
 
-        <h3>What We Do</h3>
-        <p>We offer a comprehensive range of construction services designed to meet all your building needs:</p>
-        <ul style="margin-left: 2rem; margin-bottom: 1.5rem; color: #555; line-height: 2;">
-          <li>Complete residential construction from foundation to finish</li>
-          <li>Home remodeling and renovation services</li>
-          <li>Commercial construction and build-outs</li>
-          <li>Home additions and extensions</li>
-          <li>Roofing and siding installation and repair</li>
-          <li>Custom deck and patio construction</li>
-          <li>Kitchen and bathroom renovations</li>
-          <li>Interior and exterior remodeling</li>
-        </ul>
-
-        <h3>Our Values</h3>
-        <p><strong>Quality Craftsmanship:</strong> We take pride in every project we complete, using premium materials and proven construction techniques to ensure lasting results.</p>
-        <p><strong>Integrity:</strong> We conduct our business with honesty and transparency, providing fair pricing and clear communication throughout every project.</p>
-        <p><strong>Reliability:</strong> We understand that construction projects are significant investments. That's why we prioritize reliability, meeting deadlines, and staying within budget.</p>
-        <p><strong>Customer Focus:</strong> Your satisfaction is our top priority. We take the time to understand your vision and work closely with you to bring it to life.</p>
-        <p><strong>Expertise:</strong> Our team stays current with the latest building codes, construction methods, and industry best practices to provide you with the best solutions.</p>
-
-        <h3>Why Choose Us?</h3>
-        <p>Choosing General Contractor Services means choosing a partner who is committed to your project's success. We don't just build structures—we create spaces that enhance your life and business. Our combination of technical expertise, quality materials, attention to detail, and competitive pricing makes us the ideal choice for all your construction and remodeling needs.</p>
-        <p>We are fully licensed, insured, and bonded, giving you peace of mind throughout your project. Our team handles all aspects of construction management, from initial planning and permits to final inspections and cleanup.</p>
+        <p style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.9; color: #333;">
+          For us, it's about continually innovating, bringing in cutting-edge techniques and sustainable practices that enhance quality of life. In the end, we're here to craft environments that foster growth, connection, and a little bit of everyday inspiration.
+        </p>
 
         <div style="text-align: center; margin-top: 3rem;">
           <a href="contact.html" class="btn">Get In Touch</a>
@@ -211,7 +194,7 @@
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         
         if (consent) {
-          const prefs = JSON.parse(consent);
+          const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;

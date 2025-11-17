@@ -8,25 +8,25 @@
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta name="X-Content-Type-Options" content="nosniff" />
+    <meta name="X-Frame-Options" content="DENY" />
+    <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
     <script src="security.js"></script>
     <title>Contact Us - General Contractor Services</title>
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html" class="active">Contact Us</a></li>
-      </ul>
+      <div class="nav-container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="hero">
@@ -378,7 +378,13 @@
       function showFormError(message) {
         const errorDiv = document.getElementById('formErrors');
         if (errorDiv) {
-          errorDiv.innerHTML = '<div style="background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;">' + escapeHtml(message) + '</div>';
+          // Use safe DOM manipulation to prevent XSS
+          const errorMsg = escapeHtml(message);
+          const errorBox = document.createElement('div');
+          errorBox.style.cssText = 'background: #fee2e2; color: #991b1b; padding: 1rem; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 1.5rem;';
+          errorBox.textContent = errorMsg;
+          errorDiv.innerHTML = '';
+          errorDiv.appendChild(errorBox);
           errorDiv.style.display = 'block';
           errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
@@ -387,7 +393,13 @@
       function showFormSuccess(message) {
         const errorDiv = document.getElementById('formErrors');
         if (errorDiv) {
-          errorDiv.innerHTML = '<div style="background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;">' + escapeHtml(message) + '</div>';
+          // Use safe DOM manipulation to prevent XSS
+          const successMsg = escapeHtml(message);
+          const successBox = document.createElement('div');
+          successBox.style.cssText = 'background: #d1fae5; color: #065f46; padding: 1rem; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 1.5rem;';
+          successBox.textContent = successMsg;
+          errorDiv.innerHTML = '';
+          errorDiv.appendChild(successBox);
           errorDiv.style.display = 'block';
           errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
@@ -439,7 +451,7 @@
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         
         if (consent) {
-          const prefs = JSON.parse(consent);
+          const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;

@@ -1,7 +1,8 @@
 // Security and Input Validation Utilities
 // Prevents XSS, injection attacks, and validates user input
+// Enhanced security against common web vulnerabilities
 
-// HTML Entity Encoding to prevent XSS
+// HTML Entity Encoding to prevent XSS (enhanced)
 function escapeHtml(text) {
   if (typeof text !== 'string') return '';
   const map = {
@@ -10,23 +11,67 @@ function escapeHtml(text) {
     '>': '&gt;',
     '"': '&quot;',
     "'": '&#x27;',
-    '/': '&#x2F;'
+    '/': '&#x2F;',
+    '`': '&#96;',
+    '=': '&#61;'
   };
-  return text.replace(/[&<>"'/]/g, function(m) { return map[m]; });
+  return text.replace(/[&<>"'/`=]/g, function(m) { return map[m]; });
 }
 
-// Sanitize input - remove potentially dangerous characters
+// Enhanced XSS prevention - escape for use in HTML attributes
+function escapeHtmlAttribute(text) {
+  if (typeof text !== 'string') return '';
+  return escapeHtml(text).replace(/\n/g, '&#10;').replace(/\r/g, '&#13;').replace(/\t/g, '&#9;');
+}
+
+// Escape for use in JavaScript context
+function escapeJs(text) {
+  if (typeof text !== 'string') return '';
+  return text
+    .replace(/\\/g, '\\\\')
+    .replace(/'/g, "\\'")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, '\\n')
+    .replace(/\r/g, '\\r')
+    .replace(/\t/g, '\\t')
+    .replace(/\x00/g, '\\0');
+}
+
+// Enhanced sanitize input - remove potentially dangerous characters and XSS vectors
 function sanitizeInput(input) {
   if (typeof input !== 'string') return '';
   // Remove null bytes, control characters, and HTML tags
-  return input
+  let sanitized = input
     .replace(/\0/g, '')
-    .replace(/[\x00-\x1F\x7F]/g, '')
+    .replace(/[\x00-\x1F\x7F-\x9F]/g, '') // Remove control characters
     .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
     .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
+    .replace(/<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi, '')
+    .replace(/<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi, '')
+    .replace(/<link\b[^<]*(?:(?!<\/link>)<[^<]*)*<\/link>/gi, '')
+    .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, '')
     .replace(/on\w+\s*=/gi, '') // Remove event handlers like onclick=
     .replace(/javascript:/gi, '') // Remove javascript: protocol
-    .replace(/data:text\/html/gi, ''); // Remove data URIs
+    .replace(/vbscript:/gi, '') // Remove vbscript: protocol
+    .replace(/data:text\/html/gi, '') // Remove data URIs
+    .replace(/data:image\/svg\+xml/gi, '') // Remove SVG data URIs that could contain scripts
+    .replace(/expression\s*\(/gi, '') // Remove CSS expressions (IE)
+    .replace(/@import/gi, '') // Remove CSS imports
+    .replace(/<meta/gi, '') // Remove meta tags
+    .replace(/<base/gi, ''); // Remove base tags
+  
+  // Additional XSS prevention patterns
+  sanitized = sanitized
+    .replace(/&#x[0-9a-f]+;/gi, '') // Remove hex entities
+    .replace(/&#[0-9]+;/g, '') // Remove decimal entities
+    .replace(/&[a-z]+;/gi, function(match) {
+      // Only allow safe HTML entities
+      const safeEntities = ['amp', 'lt', 'gt', 'quot', 'apos', 'nbsp'];
+      const entity = match.replace(/[&;]/g, '').toLowerCase();
+      return safeEntities.includes(entity) ? match : '';
+    });
+  
+  return sanitized;
 }
 
 // Validate email format
@@ -175,10 +220,66 @@ function checkHoneypot(honeypotValue) {
   return !honeypotValue || honeypotValue.trim() === '';
 }
 
+// Additional security: Validate URL to prevent open redirects
+function validateUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  try {
+    const urlObj = new URL(url);
+    // Only allow http, https protocols
+    if (!['http:', 'https:'].includes(urlObj.protocol)) return false;
+    // Prevent javascript: and data: protocols
+    if (urlObj.protocol === 'javascript:' || urlObj.protocol === 'data:') return false;
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Sanitize URL to prevent XSS and open redirects
+function sanitizeUrl(url) {
+  if (!url || typeof url !== 'string') return '';
+  // Remove dangerous protocols
+  const sanitized = url
+    .replace(/javascript:/gi, '')
+    .replace(/data:/gi, '')
+    .replace(/vbscript:/gi, '')
+    .replace(/on\w+\s*=/gi, '');
+  
+  // Only allow relative URLs or http/https
+  if (sanitized.startsWith('http://') || sanitized.startsWith('https://') || sanitized.startsWith('/') || sanitized.startsWith('./')) {
+    return sanitized;
+  }
+  return '';
+}
+
+// Content Security: Prevent DOM-based XSS
+function safeSetInnerHTML(element, content) {
+  if (!element || element.textContent === undefined) return false;
+  // Use textContent instead of innerHTML to prevent XSS
+  element.textContent = content;
+  return true;
+}
+
+// Validate and sanitize JSON to prevent JSON injection
+function safeJsonParse(jsonString) {
+  if (!jsonString || typeof jsonString !== 'string') return null;
+  try {
+    // Remove potential JSON injection patterns
+    const sanitized = jsonString
+      .replace(/<script/gi, '')
+      .replace(/javascript:/gi, '');
+    return JSON.parse(sanitized);
+  } catch (e) {
+    return null;
+  }
+}
+
 // Export functions for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     escapeHtml,
+    escapeHtmlAttribute,
+    escapeJs,
     sanitizeInput,
     validateEmail,
     validatePhone,
@@ -187,7 +288,11 @@ if (typeof module !== 'undefined' && module.exports) {
     validateFormData,
     validateCookiePreferences,
     checkRateLimit,
-    checkHoneypot
+    checkHoneypot,
+    validateUrl,
+    sanitizeUrl,
+    safeSetInnerHTML,
+    safeJsonParse
   };
 }
 

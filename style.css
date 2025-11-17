@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "EB Garamond", serif;
+  font-family: "Century Gothic", "CenturyGothic", "AppleGothic", Arial, sans-serif;
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
   color: #333;
   line-height: 1.6;
@@ -22,6 +22,56 @@ nav {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+nav .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  background: #ffffff;
+}
+
+.logo-section img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+nav .logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  gap: 1rem;
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: visible;
+}
+
+nav .logo-container img {
+  height: 70px;
+  width: auto;
+  max-width: none;
+  min-width: auto;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+  display: block;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -29,9 +79,8 @@ nav ul {
   align-items: center;
   flex-wrap: wrap;
   gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
@@ -88,6 +137,24 @@ nav ul li a.active {
   bottom: 0;
   background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
   opacity: 0.3;
+}
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo img {
+  height: 200px;
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  display: block;
 }
 
 .hero h1 {
@@ -270,6 +337,20 @@ section h2::after {
   background: #000000;
   color: #ffffff;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Adparavimus Section */
+.adparavimus-section {
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
+.adparavimus-content {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  padding: 4rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* About Page Styles */
@@ -829,10 +910,23 @@ footer a:hover {
     gap: 2rem;
   }
 
+  nav .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .logo-section {
+    padding: 1.5rem 0;
+  }
+
+  .logo-section img {
+    height: 250px;
+  }
+
   nav ul {
     flex-direction: column;
     gap: 0.75rem;
-    padding: 1rem;
+    width: 100%;
   }
 
   .services-grid {
@@ -842,8 +936,13 @@ footer a:hover {
 
   .about-content,
   .contact-info,
-  .contact-form {
+  .contact-form,
+  .adparavimus-content {
     padding: 2rem;
+  }
+
+  .adparavimus-content h2 {
+    font-size: 2rem !important;
   }
 
   section h2 {
@@ -852,6 +951,15 @@ footer a:hover {
 
   .hero {
     padding: 4rem 1.5rem;
+  }
+
+  .hero-logo {
+    margin-bottom: 2rem;
+  }
+
+  .hero-logo img {
+    height: 150px;
+    max-width: 85%;
   }
 }
 
@@ -870,7 +978,8 @@ footer a:hover {
 .service-card,
 .about-content,
 .contact-info,
-.contact-form {
+.contact-form,
+.adparavimus-content {
   animation: fadeInUp 0.6s ease-out;
 }
 

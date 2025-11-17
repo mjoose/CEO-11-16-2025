@@ -8,33 +8,54 @@
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta name="X-Content-Type-Options" content="nosniff" />
+    <meta name="X-Frame-Options" content="DENY" />
+    <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
+    <script src="security.js"></script>
     <title>General Contractor Services - Professional Construction & Remodeling</title>
   </head>
   <body>
     <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
+      <div class="nav-container">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="hero">
+      <div class="hero-logo">
+        <img src="images/image0.png" alt="ADPAR Construction Logo">
+      </div>
       <h1>General Contractor Services</h1>
       <p>Professional Construction & Remodeling Solutions</p>
       <p style="font-size: 1.3rem; margin-top: 1.5rem; font-weight: 500;">Your trusted partner for quality construction and renovation projects</p>
     </div>
 
     <div class="container">
+      <section class="adparavimus-section">
+        <div class="adparavimus-content">
+          <h2 style="margin-bottom: 1.5rem; color: #000000; font-size: 2.5rem; text-align: center;">Adparavimus</h2>
+          <p style="font-style: italic; font-size: 1.1rem; color: #666; text-align: center; margin-bottom: 2rem;"><em>Verb</em></p>
+          <div style="max-width: 900px; margin: 0 auto;">
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.9; color: #333;">
+              For us, every project begins with preparation: the discipline to plan, the vision to foresee, and the precision to execute. "Adpar" is not just our name; it's a philosophy of construction, rooted in the idea of "adparavimus"—that we have prepared as a team.
+            </p>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.9; color: #333;">
+              We build with foresight today to create lasting spaces for tomorrow. Every detail is anticipated, every challenge met with confidence, because "adparavimus" means we've laid the groundwork before the first stone is set.
+            </p>
+            <p style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.9; color: #333; font-weight: 600;">
+              In short, we craft spaces that stand the test of time, because we believe preparation is the cornerstone of excellence.
+            </p>
+          </div>
+        </div>
+      </section>
       <section>
         <h2>Our Services</h2>
         <div class="services-grid">
@@ -220,7 +241,7 @@
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         
         if (consent) {
-          const prefs = JSON.parse(consent);
+          const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;
