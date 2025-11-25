@@ -44,7 +44,7 @@
 
           <div class="contact-form">
             <h3>Send Us a Message</h3>
-            <form id="contactForm" action="#" method="POST" novalidate>
+            <form id="contactForm" action="send-email-standalone.php" method="POST" novalidate>
               <!-- Honeypot field for bot detection (hidden from users) -->
               <div style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
                 <label for="website">Website (leave blank)</label>
@@ -299,17 +299,37 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             
-            // In a real application, send sanitized data to server
-            // For now, simulate success
-            setTimeout(function() {
-              showFormSuccess('Thank you for your message! We have received your inquiry and will respond within 24 hours.');
-              form.reset();
+            // Prepare form data for PHP backend
+            const formDataToSend = new FormData();
+            formDataToSend.append('name', validation.sanitized.name);
+            formDataToSend.append('email', validation.sanitized.email);
+            formDataToSend.append('phone', validation.sanitized.phone || '');
+            formDataToSend.append('service', validation.sanitized.service || '');
+            formDataToSend.append('message', validation.sanitized.message);
+            
+            // Send sanitized data to PHP backend
+            fetch('send-email.php', {
+              method: 'POST',
+              body: formDataToSend
+            })
+            .then(response => response.json())
+            .then(result => {
+              if (result.success) {
+                showFormSuccess('Thank you for your message! We have received your inquiry and will respond within 24 hours.');
+                form.reset();
+                document.getElementById('messageCharCount').textContent = '0';
+              } else {
+                showFormError(result.error || 'Failed to send message. Please try again later.');
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              showFormError('Network error. Please check your connection and try again.');
+            })
+            .finally(() => {
               submitBtn.disabled = false;
               submitBtn.textContent = 'Send Message';
-              
-              // Log sanitized data (in production, send to server)
-              console.log('Sanitized form data:', validation.sanitized);
-            }, 1000);
+            });
             
             return false;
           });
