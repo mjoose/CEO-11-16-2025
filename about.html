@@ -3,92 +3,164 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
-    <meta name="X-Content-Type-Options" content="nosniff" />
-    <meta name="X-Frame-Options" content="DENY" />
-    <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
     <script src="security.js"></script>
-    <title>About Us - General Contractor Services</title>
+    <script src="main.js" defer></script>
+    <title>About — Adpar Construction</title>
   </head>
   <body>
-    <nav>
-      <div class="nav-container">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html" class="active">ABOUT</a></li>
-          <li><a href="portfolio.html">PORTFOLIO</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
-        </ul>
+    <div class="site-marquee" aria-hidden="true">
+      <div class="site-marquee__inner">
+        <span>Preparation is at the core of everything we do — Adpar</span>
+        <span>Preparation is at the core of everything we do — Adpar</span>
       </div>
-    </nav>
-
-    <div class="hero">
-      <div class="hero-logo">
-        <img src="images/image0.png" alt="ADPAR Construction Logo">
-      </div>
-      <p style="font-size: 1.3rem; margin-top: 1.5rem; font-weight: 500;">Preparation is at the core of everything that we do.</p>
     </div>
+
+    <header class="site-header">
+      <div class="site-header__row">
+        <a href="index.html" class="logo-container">
+          <img src="images/image0.png" alt="Adpar Construction logo" width="220" height="44" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="nav-drawer" class="nav-drawer" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="page-hero__inner reveal">
+        <p class="section-label">Adpar studio</p>
+        <h1>About us</h1>
+        <p>Preparation is at the core of everything that we do.</p>
+      </div>
+    </section>
 
     <div class="container">
-      <div class="about-content">
-        <p style="margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.9; color: #ffffff;">
-          At the heart of what we do is a genuine passion for the art of construction. We blend that passion with a precise and systematic approach to every project we take on.
-        </p>
-
-        <p style="margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.9; color: #ffffff;">
-          We're not just here to build functional, stunning spaces—we're here to create places that truly inspire and uplift the communities around them.
-        </p>
-
-        <p style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.9; color: #ffffff;">
-          For us, it's about continually innovating, bringing in cutting-edge techniques and sustainable practices that enhance quality of life. In the end, we're here to craft environments that foster growth, connection, and a little bit of everyday inspiration.
-        </p>
-
-        <div style="text-align: center; margin-top: 3rem;">
-          <a href="contact.html" class="btn">Get In Touch</a>
+      <section class="section section--tight" style="padding-top: 0">
+        <div class="split-band reveal">
+          <div class="about-content" style="padding: 0; max-width: none">
+            <p>
+              At the heart of what we do is a genuine passion for the art of construction. We blend that passion with a precise and systematic approach to every project we take on.
+            </p>
+            <p>
+              We’re not just here to build functional, stunning spaces—we’re here to create places that truly inspire and uplift the communities around them.
+            </p>
+            <p style="margin-bottom: 0">
+              For us, it’s about continually innovating, bringing in cutting-edge techniques and sustainable practices that enhance quality of life. In the end, we’re here to craft environments that foster growth, connection, and a little bit of everyday inspiration.
+            </p>
+          </div>
+          <div class="split-band__media">
+            <img src="https://images.unsplash.com/photo-1541976590-713941681591?auto=format&fit=crop&w=1400&q=80" alt="Construction workspace" width="1400" height="1050" loading="lazy" />
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section class="section section--soft" style="border-radius: 2px; margin-top: 2rem">
+        <div class="section-inner">
+          <div class="section-head reveal">
+            <p class="section-label">Values</p>
+            <h2>What guides Adpar</h2>
+            <p>Aligned with the studio-style storytelling you liked—clear pillars, zero fluff.</p>
+          </div>
+          <div class="work-grid">
+            <article class="work-tile reveal">
+              <div>
+                <div class="work-tile__icon">01</div>
+                <h3>Preparation first</h3>
+                <p>We plan before we cut—scope, sequencing, and quality checks are built into the schedule.</p>
+              </div>
+              <div class="work-tile__visual">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+              </div>
+            </article>
+            <article class="work-tile reveal">
+              <div>
+                <div class="work-tile__icon">02</div>
+                <h3>Single accountability</h3>
+                <p>One contract, one team lead—so questions get answers and nothing falls between trades.</p>
+              </div>
+              <div class="work-tile__visual">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+              </div>
+            </article>
+          </div>
+          <div class="text-center mt-lg reveal">
+            <a class="btn" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <footer>
-      <p>&copy; 2025 Adpar Construction. All rights reserved. | <a href="privacy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a></p>
+    <footer class="site-footer">
+      <div class="site-footer__grid">
+        <div>
+          <p class="footer-brand">Adpar.</p>
+          <p>General contracting and remodeling with one accountable team—from preparation through punch list.</p>
+        </div>
+        <div>
+          <h3>Menu</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Reach out for estimates, timelines, and service areas.</p>
+          <p style="margin-top: 1rem"><a href="contact.html">Start a conversation →</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Adpar Construction. All rights reserved.</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
     <div id="cookieBanner" class="cookie-banner">
       <div class="cookie-banner-content">
         <div class="cookie-banner-text">
-          <h4>🍪 Cookie Preferences</h4>
-          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.</p>
+          <h4>Cookie preferences</h4>
+          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking “Accept All”, you consent to our use of cookies.</p>
         </div>
         <div class="cookie-banner-buttons">
-          <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
-          <button class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize Cookies</button>
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+          <button type="button" class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
         </div>
       </div>
     </div>
 
-    <!-- Cookie Overlay -->
     <div id="cookieOverlay" class="cookie-overlay" onclick="closeCookieCustomize()"></div>
 
-    <!-- Cookie Customization Panel -->
     <div id="cookieCustomizePanel" class="cookie-customize-panel">
       <div class="cookie-panel-content">
         <div class="cookie-panel-header">
-          <h3>Cookie Preferences</h3>
-          <button class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
+          <h3>Cookie preferences</h3>
+          <button type="button" class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
         </div>
-        <p class="cookie-panel-description">
-          Manage your cookie preferences. You can enable or disable different types of cookies below. 
-          Required cookies are essential for the website to function properly and cannot be disabled.
-        </p>
+        <p class="cookie-panel-description">Manage your cookie preferences. Required cookies are essential and cannot be disabled.</p>
 
         <div class="cookie-category">
           <div class="cookie-category-header">
@@ -96,11 +168,11 @@
               <h4>Required Cookies <span class="cookie-required-badge">Always Active</span></h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" checked disabled id="cookieRequired">
+              <input type="checkbox" checked disabled id="cookieRequired" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</p>
+          <p>These cookies are essential for the website to function properly.</p>
         </div>
 
         <div class="cookie-category">
@@ -109,11 +181,11 @@
               <h4>Analytics Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieAnalytics">
+              <input type="checkbox" id="cookieAnalytics" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+          <p>These cookies help us understand how visitors interact with our website.</p>
         </div>
 
         <div class="cookie-category">
@@ -122,11 +194,11 @@
               <h4>Marketing Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieMarketing">
+              <input type="checkbox" id="cookieMarketing" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are used to deliver advertisements and track campaign performance. They may be set by our advertising partners.</p>
+          <p>These cookies may be set by our advertising partners.</p>
         </div>
 
         <div class="cookie-category">
@@ -135,99 +207,87 @@
               <h4>Functional Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieFunctional">
+              <input type="checkbox" id="cookieFunctional" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.</p>
+          <p>These cookies enable enhanced functionality and personalization.</p>
         </div>
 
         <div class="cookie-panel-actions">
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" style="background: #ef4444; color: white;">Reject All</button>
-          <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save Preferences</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save preferences</button>
         </div>
       </div>
     </div>
 
     <script>
-      // Cookie Management Script
       const COOKIE_CONSENT_KEY = 'cookieConsent';
-      
-      // Check if user has already made a choice
-      window.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('DOMContentLoaded', function () {
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         if (!consent) {
-          setTimeout(() => {
+          setTimeout(function () {
             document.getElementById('cookieBanner').classList.add('show');
           }, 500);
         }
       });
-
       function acceptAllCookies() {
-        const preferences = {
-          required: true,
-          analytics: true,
-          marketing: true,
-          functional: true,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(
+          COOKIE_CONSENT_KEY,
+          JSON.stringify({
+            required: true,
+            analytics: true,
+            marketing: true,
+            functional: true,
+            timestamp: new Date().toISOString(),
+          })
+        );
         closeCookieBanner();
       }
-
       function rejectAllCookies() {
-        const preferences = {
-          required: true,
-          analytics: false,
-          marketing: false,
-          functional: false,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(
+          COOKIE_CONSENT_KEY,
+          JSON.stringify({
+            required: true,
+            analytics: false,
+            marketing: false,
+            functional: false,
+            timestamp: new Date().toISOString(),
+          })
+        );
         closeCookieBanner();
-        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) {
-          closeCookieCustomize();
-        }
+        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) closeCookieCustomize();
       }
-
       function openCookieCustomize() {
-        const panel = document.getElementById('cookieCustomizePanel');
-        const overlay = document.getElementById('cookieOverlay');
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-        
         if (consent) {
           const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;
         }
-        
-        panel.classList.add('show');
-        overlay.classList.add('show');
+        document.getElementById('cookieCustomizePanel').classList.add('show');
+        document.getElementById('cookieOverlay').classList.add('show');
       }
-
       function closeCookieCustomize() {
         document.getElementById('cookieCustomizePanel').classList.remove('show');
         document.getElementById('cookieOverlay').classList.remove('show');
       }
-
       function saveCookiePreferences() {
         const preferences = {
           required: true,
           analytics: document.getElementById('cookieAnalytics').checked,
           marketing: document.getElementById('cookieMarketing').checked,
           functional: document.getElementById('cookieFunctional').checked,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
         };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(validateCookiePreferences(preferences)));
         closeCookieBanner();
         closeCookieCustomize();
       }
-
       function closeCookieBanner() {
         document.getElementById('cookieBanner').classList.remove('show');
       }
     </script>
   </body>
 </html>
-

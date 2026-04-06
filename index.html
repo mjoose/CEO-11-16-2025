@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
@@ -15,122 +14,446 @@
     <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
     <script src="security.js"></script>
-    <title>General Contractor Services - Professional Construction & Remodeling</title>
+    <script src="main.js" defer></script>
+    <title>Adpar Construction — General Contractor & Remodeling</title>
   </head>
   <body>
-    <nav>
-      <div class="nav-container">
-        <ul>
-          <li><a href="index.html" class="active">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="portfolio.html">PORTFOLIO</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
-        </ul>
+    <div class="site-marquee" aria-hidden="true">
+      <div class="site-marquee__inner">
+        <span>Construction that supports your community — Built on preparation, built to last — Adpar</span>
+        <span>Construction that supports your community — Built on preparation, built to last — Adpar</span>
       </div>
-    </nav>
-
-    <div class="hero">
-      <div class="hero-logo">
-        <img src="images/image0.png" alt="ADPAR Construction Logo">
-      </div>
-      <p style="font-size: 1.3rem; margin-top: 1.5rem; font-weight: 500;">Preparation is at the core of everything that we do.</p>
     </div>
 
-    <div class="container">
-      <section class="adparavimus-section">
-        <div class="adparavimus-content">
-          <h2 class="no-underline" style="margin-bottom: 1.5rem; color: #ffffff; font-size: 2.5rem; text-align: center;"><span style="text-decoration: underline;">Adpar</span>avimus</h2>
-          <p style="font-style: italic; font-size: 1.1rem; color: #ffffff; text-align: center; margin-bottom: 2rem;"><em>Verb</em></p>
-          <div style="max-width: 900px; margin: 0 auto;">
-            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.9; color: #ffffff;">
-              For us, every project begins with preparation: the discipline to plan, the vision to foresee, and the precision to execute. "Adpar" is not just our name; it's a philosophy of construction, rooted in the idea of "adparavimus"—that we have prepared as a team.
-            </p>
-            <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.9; color: #ffffff;">
-              We build with foresight today to create lasting spaces for tomorrow. Every detail is anticipated, every challenge met with confidence, because "adparavimus" means we've laid the groundwork before the first stone is set.
-            </p>
-            <p style="margin-bottom: 0; font-size: 1.1rem; line-height: 1.9; color: #ffffff; font-weight: 600;">
-              In short, we craft spaces that stand the test of time, because we believe preparation is the cornerstone of excellence.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Residential Construction</h3>
-            <p>From the first stake in the ground to the final walkthrough, we build homes with precision, intention, and a commitment to long-term quality. Your vision gets translated into a durable, beautifully crafted living space.</p>
-          </div>
-          <div class="service-card">
-            <h3>Home Remodeling</h3>
-            <p>Transform the familiar into something exceptional. Our remodeling work blends refined design, solid construction, and a focus on long-term functionality.</p>
-          </div>
-          <div class="service-card">
-            <h3>Commercial Construction</h3>
-            <p>We deliver commercial builds that balance efficiency, durability, and budget control. Offices, retail spaces, and facilities are constructed with disciplined project management</p>
-          </div>
-          <div class="service-card">
-            <h3>Additions & Extensions</h3>
-            <p>Grow your home seamlessly. We design and build additions that integrate naturally with your existing structure while giving you the extra room your lifestyle needs.</p>
-          </div>
-          <div class="service-card">
-            <h3>Roofing & Siding</h3>
-            <p>Your home's first line of defense deserves quality. We provide durable roofing and siding that safeguard your property while elevating curb appeal.</p>
-          </div>
-          <div class="service-card">
-            <h3>Deck & Patio Construction</h3>
-            <p>From concept to completion, we create decks and patios built with precision, premium  materials and craftsmanship you can feel under your feet.</p>
-          </div>
-      
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="portfolio.html" class="btn">View Our Portfolio</a>
-        </div>
-      </section>
+    <header class="site-header">
+      <div class="site-header__row">
+        <a href="index.html" class="logo-container">
+          <img src="images/image0.png" alt="Adpar Construction logo" width="220" height="44" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="nav-drawer" class="nav-drawer" aria-label="Mobile">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-      <section>
-        <h2>Why Choose Us?</h2>
-        <div class="about-content">
-          <p>“Built on Preparation, Built to Last.” That means we focus on meticulous planning and rock-solid quality, ensuring that everything we build or renovate is designed to stand the test of time.</p>
-          <div style="text-align: center; margin-top: 2rem;">
-            <a href="about.html" class="btn btn-secondary">Learn More About Us</a>
+    <section class="hero-ratko">
+      <div class="hero-ratko__bg">
+        <img
+          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=2000&q=80"
+          alt=""
+          width="2000"
+          height="1200"
+          loading="eager"
+        />
+      </div>
+      <div class="hero-ratko__overlay"></div>
+      <div class="hero-ratko__content">
+        <p class="hero-kicker">We build the facilities that keep America going</p>
+        <h1 class="hero-title">Redefining <em>construction</em></h1>
+        <p class="hero-lead">
+          Adpar is a leading general contractor specializing in construction and remodeling. One budget, one contract, one source of accountability—and one cohesive turnkey delivery from preparation through completion.
+        </p>
+        <div class="hero-meta">
+          <a class="btn" href="contact.html">Contact Adpar today</a>
+          <p class="hero-brand"><strong>Adpar.</strong>® Preparation at every phase.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="section-label">Where we focus</p>
+          <h2>Spaces engineered for longevity</h2>
+          <p>From residential builds to commercial interiors, we pair disciplined planning with craftsmanship—so every structure performs as well as it looks.</p>
+        </div>
+        <div class="feature-row">
+          <article class="feature-card reveal">
+            <div class="feature-card__media">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Residential construction" width="900" height="1100" loading="lazy" />
+              <div class="feature-card__shade"></div>
+            </div>
+            <div class="feature-card__body">
+              <h3>Residential<br />construction</h3>
+              <p>Complete home construction from foundation to finish—with one accountable team guiding every milestone.</p>
+              <a class="link-arrow" href="contact.html">Collaborate →</a>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__media">
+              <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=900&q=80" alt="Home remodeling" width="900" height="1100" loading="lazy" />
+              <div class="feature-card__shade"></div>
+            </div>
+            <div class="feature-card__body">
+              <h3>Remodeling<br />& upgrades</h3>
+              <p>Kitchens, baths, and whole-home transformations—planned to minimize disruption and maximize value.</p>
+              <a class="link-arrow" href="contact.html">Collaborate →</a>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__media">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad4ab?auto=format&fit=crop&w=900&q=80" alt="Commercial construction" width="900" height="1100" loading="lazy" />
+              <div class="feature-card__shade"></div>
+            </div>
+            <div class="feature-card__body">
+              <h3>Commercial<br />delivery</h3>
+              <p>Office, retail, and light commercial builds—on schedule, with transparent communication at every phase.</p>
+              <a class="link-arrow" href="contact.html">Collaborate →</a>
+            </div>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-card__media">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Outdoor living" width="900" height="1100" loading="lazy" />
+              <div class="feature-card__shade"></div>
+            </div>
+            <div class="feature-card__body">
+              <h3>Outdoor<br />living</h3>
+              <p>Decks, patios, and additions that extend your home—built with materials chosen for climate and use.</p>
+              <a class="link-arrow" href="contact.html">Collaborate →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="section-label">Capabilities</p>
+          <h2>Check out our core services</h2>
+          <p>Structured scopes, clear estimates, and field leadership that keeps crews aligned—so your project stays predictable.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-tile reveal">
+            <div>
+              <div class="work-tile__icon">01</div>
+              <h3>Residential construction</h3>
+              <p>Ground-up homes with coordinated trades, inspections, and finish details managed under a single contract.</p>
+              <a class="btn btn--ghost" href="contact.html">Start a project</a>
+            </div>
+            <div class="work-tile__visual">
+              <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+            </div>
+          </article>
+          <article class="work-tile reveal">
+            <div>
+              <div class="work-tile__icon">02</div>
+              <h3>Home remodeling</h3>
+              <p>High-impact renovations with realistic schedules—protecting your home while we work and cleaning as we go.</p>
+              <a class="btn btn--ghost" href="contact.html">Start a project</a>
+            </div>
+            <div class="work-tile__visual">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+            </div>
+          </article>
+          <article class="work-tile reveal">
+            <div>
+              <div class="work-tile__icon">03</div>
+              <h3>Commercial construction</h3>
+              <p>Tenant improvements and small commercial shells—delivered with safety plans that scale to your site.</p>
+              <a class="btn btn--ghost" href="contact.html">Start a project</a>
+            </div>
+            <div class="work-tile__visual">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+            </div>
+          </article>
+          <article class="work-tile reveal">
+            <div>
+              <div class="work-tile__icon">04</div>
+              <h3>Additions & exteriors</h3>
+              <p>Seamless expansions plus roofing and siding systems selected for durability and curb appeal.</p>
+              <a class="btn btn--ghost" href="contact.html">Start a project</a>
+            </div>
+            <div class="work-tile__visual">
+              <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" alt="" width="1200" height="900" loading="lazy" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section adparavimus-section">
+      <div class="section-inner">
+        <div class="split-band reveal">
+          <div class="split-band__text adparavimus-content">
+            <p class="section-label">Adparavimus</p>
+            <h2 class="no-underline"><span>Adpar</span>avimus</h2>
+            <p style="font-style: italic; color: var(--text-muted); margin-top: 0.5rem;"><em>Verb</em></p>
+            <p>
+              For us, every project begins with preparation: the discipline to plan, the vision to foresee, and the precision to execute. “Adpar” is not just our name; it’s a philosophy rooted in <strong style="color: var(--text);">adparavimus</strong>—that we have prepared as a team before the first stone is set.
+            </p>
+            <p>
+              We build with foresight today to create lasting spaces for tomorrow. Every detail is anticipated, every challenge met with confidence—because preparation is the cornerstone of excellence.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Planning</span>
+              <span class="pill">Accountability</span>
+              <span class="pill">Craft</span>
+            </div>
+          </div>
+          <div class="split-band__media reveal">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1400&q=80" alt="Construction site teamwork" width="1400" height="1050" loading="lazy" />
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <footer>
-      <p>&copy; 2025 Adpar Construction. All rights reserved. | <a href="privacy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a></p>
+    <section class="section section--soft">
+      <div class="section-inner studio-block">
+        <div class="studio-intro reveal">
+          <p class="section-label">Adpar studio</p>
+          <h2>How we deliver</h2>
+          <p>Our process mirrors the template you loved—clear pillars, expandable detail, and no surprises at handoff.</p>
+        </div>
+        <div class="acc-list reveal" role="list">
+          <div class="acc-item is-open">
+            <button type="button" class="acc-item__trigger" aria-expanded="true">
+              <span class="acc-item__left">
+                <span class="acc-item__num">01</span>
+                <span class="acc-item__title">Innovative build solutions</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>We apply modern methods and value engineering without cutting corners—so budgets align with outcomes.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-item__trigger" aria-expanded="false">
+              <span class="acc-item__left">
+                <span class="acc-item__num">02</span>
+                <span class="acc-item__title">Sustainable practices</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>Efficient envelopes, responsible waste handling, and durable materials that reduce lifecycle cost.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-item__trigger" aria-expanded="false">
+              <span class="acc-item__left">
+                <span class="acc-item__num">03</span>
+                <span class="acc-item__title">Collaborative approach</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>Owners, architects, and trades stay aligned through structured meetings and documented decisions.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-item__trigger" aria-expanded="false">
+              <span class="acc-item__left">
+                <span class="acc-item__num">04</span>
+                <span class="acc-item__title">Customizable scopes</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>From design-build support to build-only execution—we tailor the contract to your risk tolerance.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-item__trigger" aria-expanded="false">
+              <span class="acc-item__left">
+                <span class="acc-item__num">05</span>
+                <span class="acc-item__title">Project management</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>Milestones, inspections, and quality checks are tracked so nothing slips between trades.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-item__trigger" aria-expanded="false">
+              <span class="acc-item__left">
+                <span class="acc-item__num">06</span>
+                <span class="acc-item__title">Technology integration</span>
+              </span>
+              <span class="acc-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="acc-item__panel">
+              <p>Digital takeoffs, photo documentation, and clear reporting keep you informed without the jargon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="showcase-head reveal">
+          <p class="section-label">Featured perspective</p>
+          <h2>Our showcase—where preparation meets artistry</h2>
+          <p>Representative project types we deliver for homeowners and businesses. Visit the portfolio for more as we publish new work.</p>
+        </div>
+        <div class="showcase-grid">
+          <article class="showcase-card reveal">
+            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=900&q=80" alt="Custom residence" width="900" height="1200" loading="lazy" />
+            <div class="showcase-card__cap">
+              <span>Residential</span>
+              <h3>Custom residence</h3>
+            </div>
+          </article>
+          <article class="showcase-card reveal">
+            <img src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?auto=format&fit=crop&w=900&q=80" alt="Whole-home remodel" width="900" height="1200" loading="lazy" />
+            <div class="showcase-card__cap">
+              <span>Remodel</span>
+              <h3>Whole-home renewal</h3>
+            </div>
+          </article>
+          <article class="showcase-card reveal">
+            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80" alt="Commercial interior" width="900" height="1200" loading="lazy" />
+            <div class="showcase-card__cap">
+              <span>Commercial</span>
+              <h3>Workplace refresh</h3>
+            </div>
+          </article>
+        </div>
+        <div class="text-center mt-lg reveal">
+          <a class="btn btn--ghost" href="portfolio.html">View portfolio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="section-label">Proof</p>
+          <h2>In our case, numbers speak louder than words</h2>
+        </div>
+        <div class="stats-row">
+          <div class="stat reveal">
+            <p class="stat__num" data-counter data-target="18">0</p>
+            <p class="stat__label">Years of&#10;experience</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num" data-counter data-target="120">0</p>
+            <p class="stat__label">Projects&#10;delivered</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num" data-counter data-target="98">0</p>
+            <p class="stat__label">Client&#10;satisfaction %</p>
+          </div>
+          <div class="stat reveal">
+            <p class="stat__num" data-counter data-target="24">0</p>
+            <p class="stat__label">Hour&#10;response goal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <p class="section-label">Partnerships</p>
+          <h2>What our clients value most</h2>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote class="quote-card reveal">
+            <p>“Their commitment to quality and clear communication made a significant impact on our project. We appreciated the guidance at every step.”</p>
+            <footer>Robert P. <span>Facilities lead</span></footer>
+          </blockquote>
+          <blockquote class="quote-card reveal">
+            <p>“Adpar transformed our vision into a finished space we’re proud of—innovative solutions and attention to detail exceeded expectations.”</p>
+            <footer>David C. <span>Property owner</span></footer>
+          </blockquote>
+          <blockquote class="quote-card reveal">
+            <p>“Professional, attentive, and thorough. They built a functional space that still feels beautiful—exactly what we wanted to come home to.”</p>
+            <footer>Tawny K. <span>Homeowner</span></footer>
+          </blockquote>
+          <blockquote class="quote-card reveal">
+            <p>“From concept to completion, the team showed exceptional craftsmanship. We couldn’t be happier with how our project turned out.”</p>
+            <footer>Susan D. <span>Business owner</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="section-inner">
+        <div class="split-band reveal">
+          <div class="split-band__text">
+            <p class="section-label">Our mission</p>
+            <h2>Why choose Adpar</h2>
+            <p>“Built on Preparation, Built to Last.” We focus on meticulous planning and rock-solid quality—so everything we build or renovate is designed to endure.</p>
+            <p>We craft spaces that stand the test of time, because we believe preparation is the cornerstone of excellence.</p>
+            <a class="btn" href="about.html">Learn more about us</a>
+          </div>
+          <div class="split-band__media">
+            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=80" alt="Construction planning" width="1400" height="1050" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__grid">
+        <div>
+          <p class="footer-brand">Adpar.</p>
+          <p>General contracting and remodeling with one accountable team—from preparation through punch list.</p>
+        </div>
+        <div>
+          <h3>Menu</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Reach out for estimates, timelines, and service areas.</p>
+          <p style="margin-top: 1rem;"><a href="contact.html">Start a conversation →</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Adpar Construction. All rights reserved.</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
     <div id="cookieBanner" class="cookie-banner">
       <div class="cookie-banner-content">
         <div class="cookie-banner-text">
-          <h4>🍪 Cookie Preferences</h4>
-          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.</p>
+          <h4>Cookie preferences</h4>
+          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking “Accept All”, you consent to our use of cookies.</p>
         </div>
         <div class="cookie-banner-buttons">
-          <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
-          <button class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize Cookies</button>
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+          <button type="button" class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
         </div>
       </div>
     </div>
 
-    <!-- Cookie Overlay -->
     <div id="cookieOverlay" class="cookie-overlay" onclick="closeCookieCustomize()"></div>
 
-    <!-- Cookie Customization Panel -->
     <div id="cookieCustomizePanel" class="cookie-customize-panel">
       <div class="cookie-panel-content">
         <div class="cookie-panel-header">
-          <h3>Cookie Preferences</h3>
-          <button class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
+          <h3>Cookie preferences</h3>
+          <button type="button" class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
         </div>
         <p class="cookie-panel-description">
-          Manage your cookie preferences. You can enable or disable different types of cookies below. 
-          Required cookies are essential for the website to function properly and cannot be disabled.
+          Manage your cookie preferences. Required cookies are essential and cannot be disabled.
         </p>
 
         <div class="cookie-category">
@@ -139,11 +462,11 @@
               <h4>Required Cookies <span class="cookie-required-badge">Always Active</span></h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" checked disabled id="cookieRequired">
+              <input type="checkbox" checked disabled id="cookieRequired" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</p>
+          <p>These cookies are essential for the website to function properly.</p>
         </div>
 
         <div class="cookie-category">
@@ -152,11 +475,11 @@
               <h4>Analytics Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieAnalytics">
+              <input type="checkbox" id="cookieAnalytics" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+          <p>These cookies help us understand how visitors interact with our website.</p>
         </div>
 
         <div class="cookie-category">
@@ -165,11 +488,11 @@
               <h4>Marketing Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieMarketing">
+              <input type="checkbox" id="cookieMarketing" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are used to deliver advertisements and track campaign performance. They may be set by our advertising partners.</p>
+          <p>These cookies may be set by our advertising partners.</p>
         </div>
 
         <div class="cookie-category">
@@ -178,29 +501,27 @@
               <h4>Functional Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieFunctional">
+              <input type="checkbox" id="cookieFunctional" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.</p>
+          <p>These cookies enable enhanced functionality and personalization.</p>
         </div>
 
         <div class="cookie-panel-actions">
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" style="background: #ef4444; color: white;">Reject All</button>
-          <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save Preferences</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save preferences</button>
         </div>
       </div>
     </div>
 
     <script>
-      // Cookie Management Script
       const COOKIE_CONSENT_KEY = 'cookieConsent';
-      
-      // Check if user has already made a choice
-      window.addEventListener('DOMContentLoaded', function() {
+
+      window.addEventListener('DOMContentLoaded', function () {
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         if (!consent) {
-          setTimeout(() => {
+          setTimeout(function () {
             document.getElementById('cookieBanner').classList.add('show');
           }, 500);
         }
@@ -212,7 +533,7 @@
           analytics: true,
           marketing: true,
           functional: true,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
         };
         localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
         closeCookieBanner();
@@ -224,7 +545,7 @@
           analytics: false,
           marketing: false,
           functional: false,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
         };
         localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
         closeCookieBanner();
@@ -237,14 +558,14 @@
         const panel = document.getElementById('cookieCustomizePanel');
         const overlay = document.getElementById('cookieOverlay');
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-        
+
         if (consent) {
           const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;
         }
-        
+
         panel.classList.add('show');
         overlay.classList.add('show');
       }
@@ -260,9 +581,9 @@
           analytics: document.getElementById('cookieAnalytics').checked,
           marketing: document.getElementById('cookieMarketing').checked,
           functional: document.getElementById('cookieFunctional').checked,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
         };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(validateCookiePreferences(preferences)));
         closeCookieBanner();
         closeCookieCustomize();
       }
@@ -273,4 +594,3 @@
     </script>
   </body>
 </html>
-

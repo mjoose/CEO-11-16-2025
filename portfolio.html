@@ -3,80 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;" />
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
-    <meta name="X-Content-Type-Options" content="nosniff" />
-    <meta name="X-Frame-Options" content="DENY" />
-    <meta name="X-XSS-Protection" content="1; mode=block" />
     <link href="style.css" rel="stylesheet" />
     <script src="security.js"></script>
-    <title>Portfolio - General Contractor Services</title>
+    <script src="main.js" defer></script>
+    <title>Portfolio — Adpar Construction</title>
   </head>
   <body>
-    <nav>
-      <div class="nav-container">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="portfolio.html" class="active">PORTFOLIO</a></li>
-          <li><a href="contact.html">CONTACT US</a></li>
-        </ul>
+    <div class="site-marquee" aria-hidden="true">
+      <div class="site-marquee__inner">
+        <span>Featured builds & remodels — Case studies publishing soon — Adpar</span>
+        <span>Featured builds & remodels — Case studies publishing soon — Adpar</span>
       </div>
-    </nav>
-
-    <div class="hero">
-      <h1>Our Portfolio</h1>
     </div>
 
-    <div class="container">
-      <section>
-        <div class="services-grid">
-          <div class="service-card" style="max-width: 600px; margin: 0 auto;">
-            <h3>Coming Soon...</h3>
-            <p>Our portfolio section is currently under development. We're working hard to showcase our quality workmanship and completed projects. Please check back soon.</p>
+    <header class="site-header">
+      <div class="site-header__row">
+        <a href="index.html" class="logo-container">
+          <img src="images/image0.png" alt="Adpar Construction logo" width="220" height="44" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html" class="active">Portfolio</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav id="nav-drawer" class="nav-drawer" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="page-hero">
+      <div class="page-hero__inner reveal">
+        <p class="section-label">Work</p>
+        <h1>Our portfolio</h1>
+        <p>Showcasing the range of construction and remodeling work we deliver—full case studies and photo sets are rolling out shortly.</p>
+      </div>
+    </section>
+
+    <div class="container" style="padding-top: 2rem">
+      <div class="section-head reveal">
+        <h2>Featured project types</h2>
+        <p>Representative categories from recent Adpar engagements. Replace imagery with your completed projects anytime.</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Luxury residential" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Custom residence</h3>
+            <p>Ground-up build with integrated outdoor living—details coming to this gallery soon.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Kitchen remodel" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Kitchen &amp; living</h3>
+            <p>Open-plan remodel with structural updates and high-performance envelope.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" alt="Office space" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Commercial interior</h3>
+            <p>Tenant improvement with MEP coordination and accelerated schedule.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?auto=format&fit=crop&w=1200&q=80" alt="Addition" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Second-story addition</h3>
+            <p>Seamless tie-in to existing structure; full case study in progress.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&q=80" alt="Deck and exterior" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Exterior &amp; deck</h3>
+            <p>Weather-resistant assemblies and refined exterior detailing.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-card__img">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80" alt="Bathroom renovation" width="1200" height="900" loading="lazy" />
+          </div>
+          <div class="portfolio-card__body">
+            <h3>Bath renovation</h3>
+            <p>Waterproofing-first approach with premium fixtures and finishes.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="section section--soft" style="margin-top: 3rem; border-radius: 2px">
+        <div class="section-inner">
+          <div class="split-band reveal">
+            <div class="split-band__text">
+              <p class="section-label">Coming soon</p>
+              <h2>More projects on the way</h2>
+              <p>
+                We’re curating photo sets, client stories, and before/after documentation for this portfolio. Check back soon—or reach out and we’ll share relevant references directly.
+              </p>
+              <a class="btn" href="contact.html">Request references</a>
+            </div>
+            <div class="split-band__media">
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80" alt="Construction team" width="1400" height="1050" loading="lazy" />
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
 
-    <footer>
-      <p>&copy; 2025 Adpar Construction. All rights reserved. | <a href="privacy.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: underline;">Privacy Policy</a></p>
+    <footer class="site-footer">
+      <div class="site-footer__grid">
+        <div>
+          <p class="footer-brand">Adpar.</p>
+          <p>General contracting and remodeling with one accountable team—from preparation through punch list.</p>
+        </div>
+        <div>
+          <h3>Menu</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p>Reach out for estimates, timelines, and service areas.</p>
+          <p style="margin-top: 1rem"><a href="contact.html">Start a conversation →</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Adpar Construction. All rights reserved.</span>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
     </footer>
 
-    <!-- Cookie Consent Banner -->
     <div id="cookieBanner" class="cookie-banner">
       <div class="cookie-banner-content">
         <div class="cookie-banner-text">
-          <h4>🍪 Cookie Preferences</h4>
-          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking "Accept All", you consent to our use of cookies.</p>
+          <h4>Cookie preferences</h4>
+          <p>We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking “Accept All”, you consent to our use of cookies.</p>
         </div>
         <div class="cookie-banner-buttons">
-          <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
-          <button class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize Cookies</button>
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">Accept All</button>
+          <button type="button" class="cookie-btn cookie-btn-customize" onclick="openCookieCustomize()">Customize</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
         </div>
       </div>
     </div>
 
-    <!-- Cookie Overlay -->
     <div id="cookieOverlay" class="cookie-overlay" onclick="closeCookieCustomize()"></div>
 
-    <!-- Cookie Customization Panel -->
     <div id="cookieCustomizePanel" class="cookie-customize-panel">
       <div class="cookie-panel-content">
         <div class="cookie-panel-header">
-          <h3>Cookie Preferences</h3>
-          <button class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
+          <h3>Cookie preferences</h3>
+          <button type="button" class="cookie-panel-close" onclick="closeCookieCustomize()" aria-label="Close">×</button>
         </div>
-        <p class="cookie-panel-description">
-          Manage your cookie preferences. You can enable or disable different types of cookies below. 
-          Required cookies are essential for the website to function properly and cannot be disabled.
-        </p>
+        <p class="cookie-panel-description">Manage your cookie preferences. Required cookies are essential and cannot be disabled.</p>
 
         <div class="cookie-category">
           <div class="cookie-category-header">
@@ -84,11 +193,11 @@
               <h4>Required Cookies <span class="cookie-required-badge">Always Active</span></h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" checked disabled id="cookieRequired">
+              <input type="checkbox" checked disabled id="cookieRequired" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.</p>
+          <p>These cookies are essential for the website to function properly.</p>
         </div>
 
         <div class="cookie-category">
@@ -97,11 +206,11 @@
               <h4>Analytics Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieAnalytics">
+              <input type="checkbox" id="cookieAnalytics" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</p>
+          <p>These cookies help us understand how visitors interact with our website.</p>
         </div>
 
         <div class="cookie-category">
@@ -110,11 +219,11 @@
               <h4>Marketing Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieMarketing">
+              <input type="checkbox" id="cookieMarketing" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies are used to deliver advertisements and track campaign performance. They may be set by our advertising partners.</p>
+          <p>These cookies may be set by our advertising partners.</p>
         </div>
 
         <div class="cookie-category">
@@ -123,99 +232,87 @@
               <h4>Functional Cookies</h4>
             </div>
             <label class="cookie-toggle">
-              <input type="checkbox" id="cookieFunctional">
+              <input type="checkbox" id="cookieFunctional" />
               <span class="cookie-slider"></span>
             </label>
           </div>
-          <p>These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.</p>
+          <p>These cookies enable enhanced functionality and personalization.</p>
         </div>
 
         <div class="cookie-panel-actions">
-          <button class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()" style="background: #ef4444; color: white;">Reject All</button>
-          <button class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save Preferences</button>
+          <button type="button" class="cookie-btn cookie-btn-reject" onclick="rejectAllCookies()">Reject All</button>
+          <button type="button" class="cookie-btn cookie-btn-accept" onclick="saveCookiePreferences()">Save preferences</button>
         </div>
       </div>
     </div>
 
     <script>
-      // Cookie Management Script
       const COOKIE_CONSENT_KEY = 'cookieConsent';
-      
-      // Check if user has already made a choice
-      window.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('DOMContentLoaded', function () {
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
         if (!consent) {
-          setTimeout(() => {
+          setTimeout(function () {
             document.getElementById('cookieBanner').classList.add('show');
           }, 500);
         }
       });
-
       function acceptAllCookies() {
-        const preferences = {
-          required: true,
-          analytics: true,
-          marketing: true,
-          functional: true,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(
+          COOKIE_CONSENT_KEY,
+          JSON.stringify({
+            required: true,
+            analytics: true,
+            marketing: true,
+            functional: true,
+            timestamp: new Date().toISOString(),
+          })
+        );
         closeCookieBanner();
       }
-
       function rejectAllCookies() {
-        const preferences = {
-          required: true,
-          analytics: false,
-          marketing: false,
-          functional: false,
-          timestamp: new Date().toISOString()
-        };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(
+          COOKIE_CONSENT_KEY,
+          JSON.stringify({
+            required: true,
+            analytics: false,
+            marketing: false,
+            functional: false,
+            timestamp: new Date().toISOString(),
+          })
+        );
         closeCookieBanner();
-        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) {
-          closeCookieCustomize();
-        }
+        if (document.getElementById('cookieCustomizePanel').classList.contains('show')) closeCookieCustomize();
       }
-
       function openCookieCustomize() {
-        const panel = document.getElementById('cookieCustomizePanel');
-        const overlay = document.getElementById('cookieOverlay');
         const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
-        
         if (consent) {
           const prefs = safeJsonParse(consent) || {};
           document.getElementById('cookieAnalytics').checked = prefs.analytics || false;
           document.getElementById('cookieMarketing').checked = prefs.marketing || false;
           document.getElementById('cookieFunctional').checked = prefs.functional || false;
         }
-        
-        panel.classList.add('show');
-        overlay.classList.add('show');
+        document.getElementById('cookieCustomizePanel').classList.add('show');
+        document.getElementById('cookieOverlay').classList.add('show');
       }
-
       function closeCookieCustomize() {
         document.getElementById('cookieCustomizePanel').classList.remove('show');
         document.getElementById('cookieOverlay').classList.remove('show');
       }
-
       function saveCookiePreferences() {
         const preferences = {
           required: true,
           analytics: document.getElementById('cookieAnalytics').checked,
           marketing: document.getElementById('cookieMarketing').checked,
           functional: document.getElementById('cookieFunctional').checked,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
         };
-        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(preferences));
+        localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(validateCookiePreferences(preferences)));
         closeCookieBanner();
         closeCookieCustomize();
       }
-
       function closeCookieBanner() {
         document.getElementById('cookieBanner').classList.remove('show');
       }
     </script>
   </body>
 </html>
-
