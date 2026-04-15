@@ -21,8 +21,29 @@
 
     var toggle = document.querySelector('.nav-toggle');
     var drawer = document.querySelector('.nav-drawer');
+    var mqMobileNav = window.matchMedia('(max-width: 900px)');
+
+    function syncNavDrawerOffset() {
+      var header = document.querySelector('.site-header');
+      if (!header || !mqMobileNav.matches) {
+        document.documentElement.style.removeProperty('--nav-drawer-offset');
+        return;
+      }
+      document.documentElement.style.setProperty('--nav-drawer-offset', header.getBoundingClientRect().height + 'px');
+    }
+
+    syncNavDrawerOffset();
+    window.addEventListener('resize', syncNavDrawerOffset, { passive: true });
+    if (mqMobileNav.addEventListener) {
+      mqMobileNav.addEventListener('change', syncNavDrawerOffset);
+    } else if (mqMobileNav.addListener) {
+      mqMobileNav.addListener(syncNavDrawerOffset);
+    }
+    window.addEventListener('orientationchange', syncNavDrawerOffset);
+
     if (toggle && drawer) {
       toggle.addEventListener('click', function () {
+        syncNavDrawerOffset();
         var open = drawer.classList.toggle('is-open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         document.body.classList.toggle('nav-open', open);
