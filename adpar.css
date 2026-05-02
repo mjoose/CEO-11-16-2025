@@ -9,8 +9,8 @@
   --color-section-b:#0E1014;    /* darker grey */
   --section-divider:rgba(255,255,255,0.08);
 
-  --font-body: InterVar, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", Times, serif;
+  --font-body: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+  --font-display: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
 
   --radius-sm:12px;
   --radius-md:18px;
@@ -43,21 +43,6 @@
   --container-prose:42rem;     /* ~672px */
   --container-content:56rem;   /* ~896px */
   --container-wide:72rem;      /* ~1152px */
-}
-
-@font-face{
-  font-family:"InterVar";
-  src:url("fonts/inter-latin-wght-normal.woff2") format("woff2");
-  font-style:normal;
-  font-weight:100 900;
-  font-display:swap;
-}
-@font-face{
-  font-family:"InterVar";
-  src:url("fonts/inter-latin-wght-italic.woff2") format("woff2");
-  font-style:italic;
-  font-weight:100 900;
-  font-display:swap;
 }
 
 *{box-sizing:border-box}
