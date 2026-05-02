@@ -421,6 +421,8 @@ a{color:inherit}
 .hero-overlay{
   position:absolute;
   inset:0;
+  z-index:1;
+  pointer-events:none;
   background:
     radial-gradient(900px 500px at 15% 25%, rgba(255,255,255,0.08), transparent 60%),
     linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.0));
@@ -429,10 +431,45 @@ a{color:inherit}
   position:absolute;
   left:0; right:0;
   bottom:0;
+  z-index:2;
   padding:0 0 48px;
 }
 @media (min-width:1024px){
   .hero-content{padding:0 0 64px}
+}
+.hero-cta{margin-top:32px}
+/* Handheld / tablet: full-bleed image + headline overlay (matches laptop layout, no clipping). */
+@media (max-width:1023px){
+  .hero{
+    height:auto;
+    min-height:clamp(24rem, 76vh, 40rem);
+    max-height:min(92vh, 900px);
+  }
+  .hero-bg img{
+    object-fit:cover;
+    object-position:center 38%;
+  }
+  .hero-overlay{
+    background:
+      radial-gradient(520px 380px at 50% 30%, rgba(255,255,255,0.06), transparent 55%),
+      linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0.12) 68%, rgba(0,0,0,0) 100%);
+  }
+  .hero-content{
+    padding:0 0 max(28px, env(safe-area-inset-bottom, 0px));
+  }
+  .hero-text{
+    padding-bottom:4px;
+  }
+  .hero-text .display{
+    font-size:clamp(2rem, 9.2vw, 2.65rem);
+    line-height:1.08;
+    letter-spacing:-0.02em;
+  }
+  .hero-text .body-lg{
+    font-size:clamp(1rem, 3.6vw, 1.125rem);
+    line-height:1.55;
+  }
+  .hero-cta{margin-top:20px}
 }
 .hero-text{
   max-width:720px;
@@ -569,6 +606,7 @@ a{color:inherit}
   padding:40px 18px;
   border-bottom:1px solid var(--color-rule);
   border-radius:var(--radius-sm);
+  text-align:center;
   transition:background 180ms ease, transform 180ms ease;
 }
 @media (min-width:1024px){
