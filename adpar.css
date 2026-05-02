@@ -622,6 +622,56 @@ a{color:inherit}
   line-height:var(--lh-h3);
   font-weight:620;
   margin:0;
+  max-width:100%;
+  min-width:0;
+  overflow:visible;
+  overflow-wrap:anywhere;
+}
+/* Block + forced breaks: long mailto strings must never exceed the card width (avoids ".com" clipped on the right). */
+.email-address .link{
+  display:block;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  word-break:break-all;
+  overflow-wrap:anywhere;
+  line-height:1.55;
+  padding:0.2em 0 0.45em;
+}
+.email-address .link:hover,
+.email-address .link:focus-visible{
+  transform:none;
+}
+@media (max-width:639px){
+  .section--contact-email .container-content{
+    padding-left:max(14px, env(safe-area-inset-left, 0px));
+    padding-right:max(14px, env(safe-area-inset-right, 0px));
+  }
+  .email-card{
+    padding:28px 10px;
+    overflow:visible;
+  }
+  .email-card:hover{
+    transform:none;
+  }
+  .email-address{
+    font-size:clamp(0.75rem, 0.55rem + 2.4vw, 0.9375rem);
+    line-height:1.55;
+    font-weight:600;
+  }
+}
+@media (max-width:359px){
+  .section--contact-email .container-content{
+    padding-left:max(12px, env(safe-area-inset-left, 0px));
+    padding-right:max(12px, env(safe-area-inset-right, 0px));
+  }
+  .email-card{
+    padding:24px 8px;
+  }
+  .email-address{
+    font-size:clamp(0.7rem, 0.5rem + 2.2vw, 0.875rem);
+    line-height:1.55;
+  }
 }
 
 /* Footer */
