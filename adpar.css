@@ -5,6 +5,10 @@
   --color-rule:#23262D;         /* dividers */
   --color-accent:#E9EAEC;       /* subtle highlight */
 
+  --color-section-a:#0B0C0F;    /* black */
+  --color-section-b:#0E1014;    /* darker grey */
+  --section-divider:rgba(255,255,255,0.08);
+
   --font-body: InterVar, Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", Times, serif;
 
@@ -73,6 +77,15 @@ body{
     var(--color-paper);
   color:var(--color-ink);
 }
+
+/* Alternating section panels (all pages) */
+main > section{
+  background:var(--color-section-a);
+  border-bottom:1px solid var(--section-divider);
+}
+main > section:nth-of-type(even){
+  background:var(--color-section-b);
+}
 img{max-width:100%; height:auto; display:block}
 a{color:inherit}
 
@@ -137,6 +150,110 @@ a{color:inherit}
   text-transform:uppercase;
   font-weight:500;
   color:var(--color-ink-soft);
+}
+.caption.is-white{color:var(--color-ink)}
+
+/* Privacy policy page */
+.policy .policy-title{
+  margin-top:12px;
+  font-size:clamp(2.4rem, 4.6vw, 3.4rem);
+  line-height:1.08;
+  letter-spacing:-0.02em;
+}
+.policy .policy-meta{margin-top:18px}
+.policy-sections{
+  margin-top:28px;
+}
+.policy-sections h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.65rem, 3vw, 2.1rem);
+  line-height:1.18;
+  font-weight:680;
+  letter-spacing:-0.015em;
+  margin:42px 0 14px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.10);
+}
+.policy-sections h2:first-child{margin-top:0}
+.policy-sections h3{
+  font-size:clamp(1.08rem, 1.7vw, 1.2rem);
+  line-height:1.35;
+  margin:26px 0 10px;
+  font-weight:700;
+  letter-spacing:-0.005em;
+}
+.policy-sections p{
+  font-size:1.02rem;
+  line-height:1.75;
+}
+.policy-sections ul{
+  margin:10px 0 18px 1.1rem;
+  padding:0;
+}
+.policy-sections li{
+  margin:10px 0;
+  color:color-mix(in srgb, var(--color-ink) 88%, var(--color-paper));
+  line-height:1.7;
+}
+.policy-sections strong{color:var(--color-ink)}
+
+/* Contact intro */
+.contact-intro{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+.contact-intro .caption{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background:rgba(255,255,255,0.04);
+  border-radius:999px;
+  margin:0 auto 18px;
+  letter-spacing:0.08em;
+}
+.contact-intro .h1{
+  font-size:clamp(2.4rem, 5vw, 3.4rem);
+  line-height:1.08;
+}
+.contact-intro .prose p{
+  font-size:clamp(1.15rem, 2.4vw, 1.45rem);
+  line-height:1.7;
+}
+
+/* Index: Adparavimus section */
+.adparavimus-word{
+  margin:0;
+  font-family:var(--font-display);
+  font-weight:650;
+  letter-spacing:-0.02em;
+  font-size:clamp(2.1rem, 4.6vw, 3.6rem);
+  line-height:1.05;
+}
+.adparavimus{
+  max-width:65ch;
+}
+.adparavimus-underline{
+  color:#c9a227;
+  text-decoration:underline;
+  text-decoration-thickness:0.08em;
+  text-underline-offset:0.14em;
+}
+.adparavimus-meta{
+  margin:6px 0 0;
+  font-size:var(--text-caption);
+  line-height:var(--lh-small);
+  color:var(--color-ink-soft);
+}
+.adparavimus-heading{
+  font-size:clamp(2rem, 3.6vw, 2.8rem);
+  line-height:1.15;
+}
+.adparavimus-prose p{
+  font-size:clamp(1.0rem, 2vw, 1.2rem);
+  line-height:1.7;
 }
 
 .h1{
@@ -337,6 +454,12 @@ a{color:inherit}
   color:#FFFFFF;
 }
 .hero-text .body-lg{color:rgba(255,255,255,0.86)}
+.hero-eyebrow{
+  color:#c9a227;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  margin:0 0 14px;
+}
 
 /* Deliverables table */
 .deliverables{
@@ -394,6 +517,19 @@ a{color:inherit}
 }
 
 /* Founders */
+.founders-intro{
+  max-width:65ch;
+}
+.founders-title{
+  margin:0;
+  font-size:clamp(2.2rem, 4.4vw, 3.1rem);
+  line-height:1.12;
+}
+.founders-subtitle{
+  margin:16px 0 0 !important;
+  font-size:clamp(1.1rem, 2.2vw, 1.35rem);
+  line-height:1.7;
+}
 .founders{
   display:grid;
   gap:48px;
@@ -445,10 +581,13 @@ a{color:inherit}
 /* Email cards */
 .email-list{border-top:1px solid var(--color-rule)}
 .email-card{
-  padding:40px 0;
+  padding:40px 18px;
   border-bottom:1px solid var(--color-rule);
   border-radius:var(--radius-sm);
   transition:background 180ms ease, transform 180ms ease;
+}
+@media (min-width:1024px){
+  .email-card{padding-left:24px; padding-right:24px}
 }
 .email-card:hover{
   background:rgba(255,255,255,0.05);
@@ -468,4 +607,7 @@ a{color:inherit}
   padding:48px 0;
   text-align:center;
 }
+
+/* Avoid a double-line right above the footer */
+main > section:last-of-type{border-bottom:0}
 
